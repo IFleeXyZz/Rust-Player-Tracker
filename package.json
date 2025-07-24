@@ -1,0 +1,13 @@
+{
+  "name": "rust-player-tracker",
+  "version": "1.0.0",
+  "description": "Tracking playtime of players with battlemetrics API",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

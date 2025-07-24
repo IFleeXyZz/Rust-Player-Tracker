@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rust Player Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="Rust Tracker Logo" class="logo">
+      <h1>Rust Player Tracker</h1>
+      <button id="themeToggle">🌙</button>
+    </div>
+  </header>
+
+  <nav>
+    <div class="tabs">
+      <button onclick="switchTab('search')" id="tab-search" class="active">Recherche</button>
+      <button onclick="switchTab('settings')" id="tab-settings">Personnalisation</button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="search" class="controls tab active">
+      <h2>Recherche de joueur</h2>
+      <input type="text" id="searchInput" placeholder="ID BattleMetrics">
+      <button id="centbutton2" onclick="searchPlayer()">Rechercher</button>
+      <div id="searchResult" style="display: none;"></div>
+    </section>
+
+    <section id="settings" class="tab">
+      <h2>Personnalisation</h2>
+      <label id="userIdLabel" for="userIdInput">Votre ID BattleMetrics :</label>
+      <input type="number" id="userIdInput" placeholder="Ex: 750897996" />
+      <p id="savedPlayerName" style="margin-top: 0.5rem;"></p>
+      <div id="controlsUserId" class="controls">
+        <button id="controlsbutton" onclick="searchUserProfile()">🔍 Voir</button>
+        <button id="saveUserBtn" onclick="saveUserId()">✔️ Enregistrer</button>
+        <button id="controlsbutton">🌍 Serveur</button>
+      </div>
+      
+      <div class="favorites-container" id="favoritesList"></div>
+
+      <h3>Exclusions UKN</h3>
+      <div id="exclusionsList"></div>
+      <div class="exclusionsListControls" class="controls">
+        <label>Serveur à exclure :</label>
+        <input type="text" id="excludeInput" placeholder="ID du serveur à exclure">
+        <button id="centbutton" onclick="addExcludedServer()">Ajouter</button>
+      </div>
+    </section>
+
+    <div id="playerProfile" class="hidden"></div>
+  </main>
+
+  <footer>
+    <p>Rust Player Tracker &copy; 2025. Non affilié à Facepunch ou BattleMetrics.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
